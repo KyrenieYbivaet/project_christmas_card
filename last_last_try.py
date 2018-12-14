@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'untitled.ui'
+# Form implementation generated from reading ui file 'last_last.ui'
 #
 # Created by: PyQt5 UI code generator 5.11.3
 #
@@ -30,7 +30,6 @@ sys.excepthook = my_exception_hook
 class Ui_Christmas_card_maker(object):
     def main_f(self):
         greeting_text = self.greeting_text.toPlainText()
-        print(greeting_text)
         if len(greeting_text) == 0:
             self.error.setEnabled(True)
             self.success.setEnabled(False)
@@ -49,9 +48,11 @@ class Ui_Christmas_card_maker(object):
                     img = Image.open('Christmas_card.jpg')
                     draw = ImageDraw.Draw(img)
                     color = (112, 146, 190)
+
                     self.add_sender(1600, 900, color, font_sender, draw)
                     self.add_recipient(1600, 800, color, font_recipient, draw)
                     self.add_greeting(600, 200, color, font_greeting, draw)
+
                     img.save("Christmas_card.jpg")
                     self.success.setEnabled(True)
 
@@ -64,12 +65,15 @@ class Ui_Christmas_card_maker(object):
                     font_greeting = ImageFont.truetype('main_font.otf', 32)
                     font_sender = ImageFont.truetype('main_font.otf', 26)
                     font_recipient = ImageFont.truetype('main_font.otf', 20)
+
                     img = Image.open('Christmas_card.jpg')
                     draw = ImageDraw.Draw(img)
                     color = (237, 28, 36)
+
                     self.add_sender(350, 365, color, font_sender, draw)
                     self.add_recipient(0, 0, color, font_recipient, draw)
                     self.add_greeting(150, 265, color, font_greeting, draw)
+
                     img.save("Christmas_card.jpg")
                     self.success.setEnabled(True)
 
@@ -83,11 +87,14 @@ class Ui_Christmas_card_maker(object):
                     font_sender = ImageFont.truetype('main_font.otf', 75)
                     font_recipient = ImageFont.truetype('main_font.otf', 50)
                     img = Image.open('Christmas_card.jpg')
+
                     draw = ImageDraw.Draw(img)
                     color = (255, 255, 255)
+
                     self.add_sender(650, 950, color, font_sender, draw)
                     self.add_recipient(0, 0, color, font_recipient, draw)
                     self.add_greeting(150, 265, color, font_greeting, draw)
+
                     img.save("Christmas_card.jpg")
                     self.success.setEnabled(True)
 
@@ -125,28 +132,33 @@ class Ui_Christmas_card_maker(object):
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(26)
+
         self.useless.setFont(font)
         self.useless.setObjectName("useless")
+
         self.useless_label_3 = QtWidgets.QLabel(self.centralwidget)
         self.useless_label_3.setGeometry(QtCore.QRect(270, 60, 171, 41))
 
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(22)
+
         self.useless_label_3.setFont(font)
         self.useless_label_3.setObjectName("useless_label_3")
+
         self.useless_label_2 = QtWidgets.QLabel(self.centralwidget)
         self.useless_label_2.setGeometry(QtCore.QRect(270, 110, 111, 41))
 
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(22)
+
         self.useless_label_2.setFont(font)
         self.useless_label_2.setObjectName("useless_label_2")
 
         self.first_pattern = QtWidgets.QRadioButton(self.centralwidget)
         self.first_pattern.setEnabled(True)
-        self.first_pattern.setGeometry(QtCore.QRect(90, 460, 31, 31))
+        self.first_pattern.setGeometry(QtCore.QRect(100, 460, 31, 31))
         self.first_pattern.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.first_pattern.setCheckable(True)
         self.first_pattern.setChecked(True)
@@ -168,6 +180,7 @@ class Ui_Christmas_card_maker(object):
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(22)
+
         self.useless_3.setFont(font)
         self.useless_3.setObjectName("useless_3")
 
@@ -177,6 +190,7 @@ class Ui_Christmas_card_maker(object):
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(22)
+
         self.useless_label.setFont(font)
         self.useless_label.setObjectName("useless_label")
 
@@ -186,6 +200,7 @@ class Ui_Christmas_card_maker(object):
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(10)
+
         self.useless_2.setFont(font)
         self.useless_2.setCursor(QtGui.QCursor(QtCore.Qt.WhatsThisCursor))
         self.useless_2.setObjectName("useless_2")
@@ -224,39 +239,51 @@ class Ui_Christmas_card_maker(object):
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(255, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ToolTipText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ToolTipText, brush)
         brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ToolTipText, brush)
         self.error.setPalette(palette)
 
@@ -272,152 +299,185 @@ class Ui_Christmas_card_maker(object):
 
         self.error_length = QtWidgets.QLabel(self.centralwidget)
         self.error_length.setEnabled(False)
-        self.error_length.setGeometry(QtCore.QRect(30, 310, 371, 21))
+        self.error_length.setGeometry(QtCore.QRect(30, 150, 371, 21))
 
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(255, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ToolTipText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ToolTipText, brush)
         brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ToolTipText, brush)
         self.error_length.setPalette(palette)
+
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
+
         self.error_length.setFont(font)
         self.error_length.setMouseTracking(False)
         self.error_length.setObjectName("error_length")
-        self.seccess = QtWidgets.QLabel(self.centralwidget)
-        self.seccess.setEnabled(False)
-        self.seccess.setGeometry(QtCore.QRect(440, 0, 191, 21))
+
+        self.success = QtWidgets.QLabel(self.centralwidget)
+        self.success.setEnabled(False)
+        self.success.setGeometry(QtCore.QRect(440, 0, 191, 21))
+
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 255, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 255, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 255, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ToolTipText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 255, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ToolTipText, brush)
         brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
         brush.setStyle(QtCore.Qt.SolidPattern)
+
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ToolTipText, brush)
-        self.seccess.setPalette(palette)
+        self.success.setPalette(palette)
+
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
-        self.seccess.setFont(font)
-        self.seccess.setMouseTracking(False)
-        self.seccess.setObjectName("seccess")
+
+        self.success.setFont(font)
+        self.success.setMouseTracking(False)
+        self.success.setObjectName("success")
+
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
         self.label_4.setGeometry(QtCore.QRect(0, 310, 241, 151))
         self.label_4.setObjectName("label_4")
+
         self.label_5 = QtWidgets.QLabel(self.centralwidget)
         self.label_5.setGeometry(QtCore.QRect(250, 310, 251, 151))
         self.label_5.setObjectName("label_5")
+
         self.label_6 = QtWidgets.QLabel(self.centralwidget)
         self.label_6.setGeometry(QtCore.QRect(510, 310, 251, 151))
         self.label_6.setObjectName("label_6")
+
         Christmas_card_maker.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(Christmas_card_maker)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 766, 21))
         self.menubar.setObjectName("menubar")
         Christmas_card_maker.setMenuBar(self.menubar)
+
         self.statusbar = QtWidgets.QStatusBar(Christmas_card_maker)
         self.statusbar.setObjectName("statusbar")
         Christmas_card_maker.setStatusBar(self.statusbar)
 
+        self.retranslateUi(Christmas_card_maker)
+        QtCore.QMetaObject.connectSlotsByName(Christmas_card_maker)
+
         self.pushButton.clicked.connect(self.main_f)
 
-        def retranslateUi(self, Christmas_card_maker):
-            _translate = QtCore.QCoreApplication.translate
-            Christmas_card_maker.setWindowTitle(_translate("Christmas_card_maker", "MainWindow"))
-            self.useless.setText(_translate("Christmas_card_maker", "Введите данные:"))
-            self.useless_label_3.setText(_translate("Christmas_card_maker", "- отправитель"))
-            self.useless_label_2.setText(_translate("Christmas_card_maker", "- адресат"))
-            self.first_pattern.setText(_translate("Christmas_card_maker", "1"))
-            self.second_pattern.setText(_translate("Christmas_card_maker", "2"))
-            self.third_pattern.setText(_translate("Christmas_card_maker", "3"))
-            self.useless_3.setText(_translate("Christmas_card_maker", "текст "))
-            self.useless_label.setText(_translate("Christmas_card_maker", "поздравления *"))
-            self.useless_2.setText(
-                _translate("Christmas_card_maker", "* звездочкой помеченны поля, обязательные к заполнению"))
-            self.pushButton.setText(_translate("Christmas_card_maker", "СГЕНЕРИРОВАТЬ!"))
-            self.greeting_text.setHtml(_translate("Christmas_card_maker",
-                                                  "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-                                                  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-                                                  "p, li { white-space: pre-wrap; }\n"
-                                                  "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-                                                  "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-            self.error.setText(_translate("Christmas_card_maker", "Введите текст!!!"))
-            self.error_length.setText(_translate("Christmas_card_maker", "Превышен лимит символов."))
-            self.seccess.setText(_translate("Christmas_card_maker", "sucsessfully"))
-            self.label_4.setText(_translate("Christmas_card_maker",
-                                            "<html><head/><body><p><img src=\":/newPrefix/pat_1.jpg\"/></p></body></html>"))
-            self.label_5.setText(_translate("Christmas_card_maker",
-                                            "<html><head/><body><p><img src=\":/newPrefix/pat_2.jpg\"/></p></body></html>"))
-            self.label_6.setText(_translate("Christmas_card_maker",
-                                            "<html><head/><body><p><img src=\":/newPrefix/pat_3.jpg\"/></p></body></html>"))
+    def retranslateUi(self, Christmas_card_maker):
+        _translate = QtCore.QCoreApplication.translate
+        Christmas_card_maker.setWindowTitle(_translate("Christmas_card_maker", "MainWindow"))
+        self.useless.setText(_translate("Christmas_card_maker", "Введите данные:"))
+        self.useless_label_3.setText(_translate("Christmas_card_maker", "- отправитель"))
+        self.useless_label_2.setText(_translate("Christmas_card_maker", "- адресат"))
+        self.first_pattern.setText(_translate("Christmas_card_maker", "1"))
+        self.second_pattern.setText(_translate("Christmas_card_maker", "2"))
+        self.third_pattern.setText(_translate("Christmas_card_maker", "3"))
+        self.useless_3.setText(_translate("Christmas_card_maker", "текст "))
+        self.useless_label.setText(_translate("Christmas_card_maker", "поздравления *"))
+        self.useless_2.setText(_translate("Christmas_card_maker", "* звездочкой помеченны поля, обязательные к заполнению"))
+        self.pushButton.setText(_translate("Christmas_card_maker", "СГЕНЕРИРОВАТЬ!"))
+        self.greeting_text.setHtml(_translate("Christmas_card_maker", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.error.setText(_translate("Christmas_card_maker", "Введите текст!!!"))
+        self.error_length.setText(_translate("Christmas_card_maker", "Превышен лимит символов."))
+        self.success.setText(_translate("Christmas_card_maker", "sucsessfully"))
+        self.label_4.setText(_translate("Christmas_card_maker", "<html><head/><body><p><img src=\":/newPrefix/pat_1.jpg\"/></p></body></html>"))
+        self.label_5.setText(_translate("Christmas_card_maker", "<html><head/><body><p><img src=\":/newPrefix/pat_2.jpg\"/></p></body></html>"))
+        self.label_6.setText(_translate("Christmas_card_maker", "<html><head/><body><p><img src=\":/newPrefix/pat_3.jpg\"/></p></body></html>"))
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
