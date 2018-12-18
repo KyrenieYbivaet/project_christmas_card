@@ -703,7 +703,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QSpinBox" name="x_sender">
     <property name="geometry">
      <rect>
-      <x>590</x>
+      <x>570</x>
       <y>80</y>
       <width>42</width>
       <height>22</height>
@@ -770,50 +770,12 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;:/newPrefix/pat_3.jpg&quot; /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QLabel" name="useless_8">
-    <property name="geometry">
-     <rect>
-      <x>780</x>
-      <y>50</y>
-      <width>16</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Times New Roman</family>
-      <pointsize>18</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>x</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="useless_9">
-    <property name="geometry">
-     <rect>
-      <x>690</x>
-      <y>50</y>
-      <width>16</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Times New Roman</family>
-      <pointsize>18</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>x</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="useless_10">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>630</x>
       <y>50</y>
-      <width>16</width>
+      <width>111</width>
       <height>21</height>
      </rect>
     </property>
@@ -824,16 +786,16 @@ p, li { white-space: pre-wrap; }
      </font>
     </property>
     <property name="text">
-     <string>x</string>
+     <string>по ширине</string>
     </property>
    </widget>
    <widget class="QLabel" name="useless_11">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>120</y>
-      <width>16</width>
-      <height>21</height>
+      <x>630</x>
+      <y>110</y>
+      <width>101</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -843,51 +805,13 @@ p, li { white-space: pre-wrap; }
      </font>
     </property>
     <property name="text">
-     <string>y</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="useless_12">
-    <property name="geometry">
-     <rect>
-      <x>690</x>
-      <y>120</y>
-      <width>16</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Times New Roman</family>
-      <pointsize>18</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>y</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="useless_13">
-    <property name="geometry">
-     <rect>
-      <x>780</x>
-      <y>120</y>
-      <width>16</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Times New Roman</family>
-      <pointsize>18</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>y</string>
+     <string>по высоте</string>
     </property>
    </widget>
    <widget class="QSpinBox" name="x_recipient">
     <property name="geometry">
      <rect>
-      <x>680</x>
+      <x>660</x>
       <y>80</y>
       <width>42</width>
       <height>22</height>
@@ -906,7 +830,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QSpinBox" name="x_greeting">
     <property name="geometry">
      <rect>
-      <x>770</x>
+      <x>750</x>
       <y>80</y>
       <width>42</width>
       <height>22</height>
@@ -925,7 +849,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QSpinBox" name="y_recipient">
     <property name="geometry">
      <rect>
-      <x>680</x>
+      <x>660</x>
       <y>150</y>
       <width>42</width>
       <height>22</height>
@@ -944,7 +868,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QSpinBox" name="y_sender">
     <property name="geometry">
      <rect>
-      <x>590</x>
+      <x>570</x>
       <y>150</y>
       <width>42</width>
       <height>22</height>
@@ -963,7 +887,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QSpinBox" name="y_greeting">
     <property name="geometry">
      <rect>
-      <x>770</x>
+      <x>750</x>
       <y>150</y>
       <width>42</width>
       <height>22</height>
@@ -982,10 +906,10 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="useless_4">
     <property name="geometry">
      <rect>
-      <x>590</x>
+      <x>560</x>
       <y>30</y>
-      <width>41</width>
-      <height>16</height>
+      <width>81</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
@@ -995,34 +919,15 @@ p, li { white-space: pre-wrap; }
      </font>
     </property>
     <property name="text">
-     <string>sender</string>
+     <string>отправитель</string>
     </property>
    </widget>
    <widget class="QLabel" name="useless_5">
     <property name="geometry">
      <rect>
-      <x>680</x>
+      <x>650</x>
       <y>30</y>
-      <width>61</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Times New Roman</family>
-      <pointsize>11</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>recipient</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="useless_6">
-    <property name="geometry">
-     <rect>
-      <x>770</x>
-      <y>30</y>
-      <width>51</width>
+      <width>71</width>
       <height>20</height>
      </rect>
     </property>
@@ -1033,7 +938,26 @@ p, li { white-space: pre-wrap; }
      </font>
     </property>
     <property name="text">
-     <string>greeting</string>
+     <string>получатель</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="useless_6">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>30</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>поздравление</string>
     </property>
    </widget>
   </widget>
@@ -1046,8 +970,20 @@ p, li { white-space: pre-wrap; }
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuChristmas_Card_Maker">
+    <property name="title">
+     <string>Christmas Card Maker</string>
+    </property>
+    <addaction name="action_D"/>
+   </widget>
+   <addaction name="menuChristmas_Card_Maker"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_D">
+   <property name="text">
+    <string>пасхалка :D</string>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="first.qrc"/>

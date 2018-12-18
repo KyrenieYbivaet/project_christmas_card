@@ -1,4 +1,4 @@
-from program import Ui_Christmas_card_maker
+from design import Ui_Christmas_card_maker
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PIL import Image, ImageDraw, ImageFont
 from shutil import copy
@@ -20,172 +20,173 @@ def my_exception_hook(exctype, value, traceback):
 sys.excepthook = my_exception_hook
 
 
-class main_pr:
+class main_pr(Ui_Christmas_card_maker):
     def main_f(self):
-        greeting_text = self.greeting_text.toPlainText()
-        if len(greeting_text) == 0:
-            self.error.setEnabled(True)
-            self.success.setEnabled(False)
-        else:
-            self.error_length.setEnabled(False)
-            self.error.setEnabled(False)
-            if self.first_pattern.isChecked():
-                if len(greeting_text) > 50:
-                    self.error_length.setEnabled(True)
-                    self.success.setEnabled(False)
-                else:
-                    copy('pattern_1.jpg', 'Christmas_card.jpg')
-                    font_greeting = ImageFont.truetype('main_font.otf', 100)
-                    font_sender = ImageFont.truetype('main_font.otf', 75)
-                    font_recipient = ImageFont.truetype('main_font.otf', 75)
-                    img = Image.open('Christmas_card.jpg')
-                    draw = ImageDraw.Draw(img)
-                    color = (112, 146, 190)
+        while True:
+            greeting_text = self.greeting_text.toPlainText()
+            if len(greeting_text) == 0:
+                self.error.setEnabled(True)
+                self.success.setEnabled(False)
+            else:
+                self.error_length.setEnabled(False)
+                self.error.setEnabled(False)
+                if self.first_pattern.isChecked():
+                    if len(greeting_text) > 50:
+                        self.error_length.setEnabled(True)
+                        self.success.setEnabled(False)
+                    else:
+                        copy('pattern_1.jpg', 'Christmas_card.jpg')
+                        font_greeting = ImageFont.truetype('main_font.otf', 100)
+                        font_sender = ImageFont.truetype('main_font.otf', 75)
+                        font_recipient = ImageFont.truetype('main_font.otf', 75)
+                        img = Image.open('Christmas_card.jpg')
+                        draw = ImageDraw.Draw(img)
+                        color = (112, 146, 190)
 
-                    if self.x_sender.value() == '-1' and self.y_sender.value() == '-1':
-                        self.add_sender(1600, 900, color, font_sender, draw)
+                        if self.x_sender.value() == '-1' and self.y_sender.value() == '-1':
+                            self.add_sender(1600, 900, color, font_sender, draw)
 
-                    elif self.x_sender.value() != '-1' and self.y_sender.value() != '-1':
-                        self.add_sender(int(self.x_sender.value()), int(self.y_sender.value()), color, font_sender, draw)
+                        elif self.x_sender.value() != '-1' and self.y_sender.value() != '-1':
+                            self.add_sender(int(self.x_sender.value()), int(self.y_sender.value()), color, font_sender, draw)
 
-                    elif self.x_sender.value() != '-1':
-                        self.add_sender(int(self.x_sender.value()), 900, color, font_sender, draw)
+                        elif self.x_sender.value() != '-1':
+                            self.add_sender(int(self.x_sender.value()), 900, color, font_sender, draw)
 
-                    elif self.y_sender.value() != '-1':
-                        self.add_sender(1600, int(self.y_sender.value()), color, font_sender, draw)
+                        elif self.y_sender.value() != '-1':
+                            self.add_sender(1600, int(self.y_sender.value()), color, font_sender, draw)
 
-                    if self.x_recipient.value() == '-1' and self.y_recipient.value() == '-1':
-                        self.add_recipient(1600, 800, color, font_recipient, draw)
+                        if self.x_recipient.value() == '-1' and self.y_recipient.value() == '-1':
+                            self.add_recipient(1600, 800, color, font_recipient, draw)
 
-                    elif self.x_recipient.value() != '-1' and self.y_recipient.value() != '-1':
-                        self.add_sender(int(self.x_recipient.value()), int(self.y_recipient.value()), color, font_sender, draw)
+                        elif self.x_recipient.value() != '-1' and self.y_recipient.value() != '-1':
+                            self.add_sender(int(self.x_recipient.value()), int(self.y_recipient.value()), color, font_sender, draw)
 
-                    elif self.x_recipient.value() != '-1':
-                        self.add_sender(int(self.x_recipient.value()), 900, color, font_sender, draw)
+                        elif self.x_recipient.value() != '-1':
+                            self.add_sender(int(self.x_recipient.value()), 900, color, font_sender, draw)
 
-                    elif self.y_recipient.value() != '-1':
-                        self.add_sender(1600, int(self.y_recipient.value()), color, font_sender, draw)
+                        elif self.y_recipient.value() != '-1':
+                            self.add_sender(1600, int(self.y_recipient.value()), color, font_sender, draw)
 
-                    if self.x_greeting.value() == '-1' and self.y_greeting.value() == '-1':
-                        self.add_greeting(600, 200, color, font_greeting, draw)
+                        if self.x_greeting.value() == '-1' and self.y_greeting.value() == '-1':
+                            self.add_greeting(600, 200, color, font_greeting, draw)
 
-                    elif self.x_greeting.value() != '-1' and self.y_greeting.value() != '-1':
-                        self.add_sender(int(self.x_greeting.value()), int(self.y_greeting.value()), color, font_sender, draw)
+                        elif self.x_greeting.value() != '-1' and self.y_greeting.value() != '-1':
+                            self.add_sender(int(self.x_greeting.value()), int(self.y_greeting.value()), color, font_sender, draw)
 
-                    elif self.x_greeting.value() != '-1':
-                        self.add_sender(int(self.x_greeting.value()), 900, color, font_sender, draw)
+                        elif self.x_greeting.value() != '-1':
+                            self.add_sender(int(self.x_greeting.value()), 900, color, font_sender, draw)
 
-                    elif self.y_greeting.value() != '-1':
-                        self.add_sender(1600, int(self.y_greeting.value()), color, font_sender, draw)
-                    print('flex')
-                    img.save("Christmas_card.jpg")
-                    self.success.setEnabled(True)
+                        elif self.y_greeting.value() != '-1':
+                            self.add_sender(1600, int(self.y_greeting.value()), color, font_sender, draw)
+                        print('flex')
+                        img.save("Christmas_card.jpg")
+                        self.success.setEnabled(True)
 
-            elif self.second_pattern.isChecked():
-                if len(greeting_text) > 50:
-                    self.error_length.setEnabled(True)
-                    self.success.setEnabled(False)
-                else:
-                    copy('pattern_2.jpg', 'Christmas_card.jpg')
-                    font_greeting = ImageFont.truetype('main_font.otf', 32)
-                    font_sender = ImageFont.truetype('main_font.otf', 26)
-                    font_recipient = ImageFont.truetype('main_font.otf', 20)
+                elif self.second_pattern.isChecked():
+                    if len(greeting_text) > 50:
+                        self.error_length.setEnabled(True)
+                        self.success.setEnabled(False)
+                    else:
+                        copy('pattern_2.jpg', 'Christmas_card.jpg')
+                        font_greeting = ImageFont.truetype('main_font.otf', 32)
+                        font_sender = ImageFont.truetype('main_font.otf', 26)
+                        font_recipient = ImageFont.truetype('main_font.otf', 20)
 
-                    img = Image.open('Christmas_card.jpg')
-                    draw = ImageDraw.Draw(img)
-                    color = (237, 28, 36)
+                        img = Image.open('Christmas_card.jpg')
+                        draw = ImageDraw.Draw(img)
+                        color = (237, 28, 36)
 
-                    if self.x_sender.value() == '-1' and self.y_sender.value() == '-1':
-                        self.add_sender(350, 365, color, font_sender, draw)
+                        if self.x_sender.value() == '-1' and self.y_sender.value() == '-1':
+                            self.add_sender(350, 365, color, font_sender, draw)
 
-                    elif self.x_sender.value() != '-1' and self.y_sender.value() != '-1':
-                        self.add_sender(int(self.x_sender.value()), int(self.y_sender.value()), color, font_sender, draw)
+                        elif self.x_sender.value() != '-1' and self.y_sender.value() != '-1':
+                            self.add_sender(int(self.x_sender.value()), int(self.y_sender.value()), color, font_sender, draw)
 
-                    elif self.x_sender.value() != '-1':
-                        self.add_sender(int(self.x_sender.value()), 365, color, font_sender, draw)
+                        elif self.x_sender.value() != '-1':
+                            self.add_sender(int(self.x_sender.value()), 365, color, font_sender, draw)
 
-                    elif self.y_sender.value() != '-1':
-                        self.add_sender(350, int(self.y_sender.value()), color, font_sender, draw)
+                        elif self.y_sender.value() != '-1':
+                            self.add_sender(350, int(self.y_sender.value()), color, font_sender, draw)
 
-                    if self.x_recipient.value() == '-1' and self.y_recipient.value() == '-1':
-                        self.add_recipient(0, 0, color, font_recipient, draw)
+                        if self.x_recipient.value() == '-1' and self.y_recipient.value() == '-1':
+                            self.add_recipient(0, 0, color, font_recipient, draw)
 
-                    elif self.x_recipient.value() != '-1' and self.y_recipient.value() != '-1':
-                        self.add_sender(int(self.x_recipient.value()), int(self.y_recipient.value()), color, font_sender, draw)
+                        elif self.x_recipient.value() != '-1' and self.y_recipient.value() != '-1':
+                            self.add_sender(int(self.x_recipient.value()), int(self.y_recipient.value()), color, font_sender, draw)
 
-                    elif self.x_recipient.value() != '-1':
-                        self.add_sender(int(self.x_recipient.value()), 0, color, font_sender, draw)
+                        elif self.x_recipient.value() != '-1':
+                            self.add_sender(int(self.x_recipient.value()), 0, color, font_sender, draw)
 
-                    elif self.y_recipient.value() != '-1':
-                        self.add_sender(0, int(self.y_recipient.value()), color, font_sender, draw)
+                        elif self.y_recipient.value() != '-1':
+                            self.add_sender(0, int(self.y_recipient.value()), color, font_sender, draw)
 
-                    if self.x_greeting.value() == '-1' and self.y_greeting.value() == '-1':
-                        self.add_greeting(150, 265, color, font_greeting, draw)
+                        if self.x_greeting.value() == '-1' and self.y_greeting.value() == '-1':
+                            self.add_greeting(150, 265, color, font_greeting, draw)
 
-                    elif self.x_greeting.value() != '-1' and self.y_greeting.value() != '-1':
-                        self.add_sender(int(self.x_greeting.value()), int(self.y_greeting.value()), color, font_sender, draw)
+                        elif self.x_greeting.value() != '-1' and self.y_greeting.value() != '-1':
+                            self.add_sender(int(self.x_greeting.value()), int(self.y_greeting.value()), color, font_sender, draw)
 
-                    elif self.x_greeting.value() != '-1':
-                        self.add_sender(int(self.x_greeting.value()), 265, color, font_sender, draw)
+                        elif self.x_greeting.value() != '-1':
+                            self.add_sender(int(self.x_greeting.value()), 265, color, font_sender, draw)
 
-                    elif self.y_greeting.value() != '-1':
-                        self.add_sender(150, int(self.y_greeting.value()), color, font_sender, draw)
+                        elif self.y_greeting.value() != '-1':
+                            self.add_sender(150, int(self.y_greeting.value()), color, font_sender, draw)
 
-                    img.save("Christmas_card.jpg")
-                    self.success.setEnabled(True)
+                        img.save("Christmas_card.jpg")
+                        self.success.setEnabled(True)
 
-            elif self.third_pattern.isChecked():
-                if len(greeting_text) > 50:
-                    self.error_length.setEnabled(True)
-                    self.success.setEnabled(False)
-                else:
-                    copy('pattern_3.jpg', 'Christmas_card.jpg')
-                    font_greeting = ImageFont.truetype('main_font.otf', 120)
-                    font_sender = ImageFont.truetype('main_font.otf', 75)
-                    font_recipient = ImageFont.truetype('main_font.otf', 50)
-                    img = Image.open('Christmas_card.jpg')
+                elif self.third_pattern.isChecked():
+                    if len(greeting_text) > 50:
+                        self.error_length.setEnabled(True)
+                        self.success.setEnabled(False)
+                    else:
+                        copy('pattern_3.jpg', 'Christmas_card.jpg')
+                        font_greeting = ImageFont.truetype('main_font.otf', 120)
+                        font_sender = ImageFont.truetype('main_font.otf', 75)
+                        font_recipient = ImageFont.truetype('main_font.otf', 50)
+                        img = Image.open('Christmas_card.jpg')
 
-                    draw = ImageDraw.Draw(img)
-                    color = (255, 255, 255)
+                        draw = ImageDraw.Draw(img)
+                        color = (255, 255, 255)
 
-                    if self.x_sender.value() == '-1' and self.y_sender.value() == '-1':
-                        self.add_sender(650, 950, color, font_sender, draw)
+                        if self.x_sender.value() == '-1' and self.y_sender.value() == '-1':
+                            self.add_sender(650, 950, color, font_sender, draw)
 
-                    elif self.x_sender.value() != '-1' and self.y_sender.value() != '-1':
-                        self.add_sender(int(self.x_sender.value()), int(self.y_sender.value()), color, font_sender, draw)
+                        elif self.x_sender.value() != '-1' and self.y_sender.value() != '-1':
+                            self.add_sender(int(self.x_sender.value()), int(self.y_sender.value()), color, font_sender, draw)
 
-                    elif self.x_sender.value() != '-1':
-                        self.add_sender(int(self.x_sender.value()), 950, color, font_sender, draw)
+                        elif self.x_sender.value() != '-1':
+                            self.add_sender(int(self.x_sender.value()), 950, color, font_sender, draw)
 
-                    elif self.y_sender.value() != '-1':
-                        self.add_sender(650, int(self.y_sender.value()), color, font_sender, draw)
+                        elif self.y_sender.value() != '-1':
+                            self.add_sender(650, int(self.y_sender.value()), color, font_sender, draw)
 
-                    if self.x_recipient.value() == '-1' and self.y_recipient.value() == '-1':
-                        self.add_recipient(0, 0, color, font_recipient, draw)
+                        if self.x_recipient.value() == '-1' and self.y_recipient.value() == '-1':
+                            self.add_recipient(0, 0, color, font_recipient, draw)
 
-                    elif self.x_recipient.value() != '-1' and self.y_recipient.value() != '-1':
-                        self.add_sender(int(self.x_recipient.value()), int(self.y_recipient.value()), color, font_sender, draw)
+                        elif self.x_recipient.value() != '-1' and self.y_recipient.value() != '-1':
+                            self.add_sender(int(self.x_recipient.value()), int(self.y_recipient.value()), color, font_sender, draw)
 
-                    elif self.x_recipient.value() != '-1':
-                        self.add_sender(int(self.x_recipient.value()), 0, color, font_sender, draw)
+                        elif self.x_recipient.value() != '-1':
+                            self.add_sender(int(self.x_recipient.value()), 0, color, font_sender, draw)
 
-                    elif self.y_recipient.value() != '-1':
-                        self.add_sender(0, int(self.y_recipient.value()), color, font_sender, draw)
+                        elif self.y_recipient.value() != '-1':
+                            self.add_sender(0, int(self.y_recipient.value()), color, font_sender, draw)
 
-                    if self.x_greeting.value() == '-1' and self.y_greeting.value() == '-1':
-                        self.add_greeting(150, 265, color, font_greeting, draw)
+                        if self.x_greeting.value() == '-1' and self.y_greeting.value() == '-1':
+                            self.add_greeting(150, 265, color, font_greeting, draw)
 
-                    elif self.x_greeting.value() != '-1' and self.y_greeting.value() != '-1':
-                        self.add_sender(int(self.x_greeting.value()), int(self.y_greeting.value()), color, font_sender, draw)
+                        elif self.x_greeting.value() != '-1' and self.y_greeting.value() != '-1':
+                            self.add_sender(int(self.x_greeting.value()), int(self.y_greeting.value()), color, font_sender, draw)
 
-                    elif self.x_greeting.value() != '-1':
-                        self.add_sender(int(self.x_greeting.value()), 265, color, font_sender, draw)
+                        elif self.x_greeting.value() != '-1':
+                            self.add_sender(int(self.x_greeting.value()), 265, color, font_sender, draw)
 
-                    elif self.y_greeting.value() != '-1':
-                        self.add_sender(150, int(self.y_greeting.value()), color, font_sender, draw)
+                        elif self.y_greeting.value() != '-1':
+                            self.add_sender(150, int(self.y_greeting.value()), color, font_sender, draw)
 
-                    img.save("Christmas_card.jpg")
-                    self.success.setEnabled(True)
+                        img.save("Christmas_card.jpg")
+                        self.success.setEnabled(True)
 
     def add_sender(self, pos_x, pos_y, color, font, draw):
         text_sender = self.text_sender.toPlainText()
@@ -207,9 +208,8 @@ class main_pr:
         draw = ImageDraw.Draw(img)
 
 
-main_pr()
-
 if __name__ == "__main__":
+    main_pr()
     app = QtWidgets.QApplication(sys.argv)
     Christmas_card_maker = QtWidgets.QMainWindow()
     ui = Ui_Christmas_card_maker()
